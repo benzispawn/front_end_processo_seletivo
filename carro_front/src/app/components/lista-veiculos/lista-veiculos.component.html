@@ -1,0 +1,52 @@
+<div class="pesquisa-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Pesquisar veículo</mat-label>
+    <input matInput [(ngModel)]="textoBusca" placeholder="Pesquisar" (input)="filtrarVeiculos()" />
+  </mat-form-field>
+  <button mat-icon-button color="primary" (click)="abrirFormulario()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="placa">
+    <th mat-header-cell *matHeaderCellDef>Placa</th>
+    <td mat-cell *matCellDef="let veiculo">{{ veiculo.placa }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="modelo">
+    <th mat-header-cell *matHeaderCellDef>Modelo</th>
+    <td mat-cell *matCellDef="let veiculo">{{ veiculo.modelo }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="marca">
+    <th mat-header-cell *matHeaderCellDef>Marca</th>
+    <td mat-cell *matCellDef="let veiculo">{{ veiculo.marca }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="ano">
+    <th mat-header-cell *matHeaderCellDef>Ano</th>
+    <td mat-cell *matCellDef="let veiculo">{{ veiculo.ano }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef> Editar </th>
+    <td mat-cell *matCellDef="let veiculo">
+      <button mat-icon-button color="accent" (click)="abrirFormulario(veiculo)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="remover">
+    <th mat-header-cell *matHeaderCellDef> Remover </th>
+    <td mat-cell *matCellDef="let veiculo">
+      <button mat-icon-button color="warn" (click)="removerVeiculo(veiculo)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+  <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+</table>

@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>{{ veiculo.id ? 'Editar Veiculo' : 'Novo Veiculo' }}</h2>
+<div mat-dialog-content>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Placa</mat-label>
+      <input matInput [(ngModel)]="veiculo.placa" name="placa" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Chassi</mat-label>
+      <input matInput [(ngModel)]="veiculo.chassi" name="chassi" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Renavam</mat-label>
+      <input matInput [(ngModel)]="veiculo.renavam" name="renavam" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Modelo</mat-label>
+      <input matInput [(ngModel)]="veiculo.modelo" name="modelo" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Marca</mat-label>
+      <input matInput [(ngModel)]="veiculo.marca" name="marca" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Ano</mat-label>
+      <input type="number" matInput [(ngModel)]="veiculo.ano" name="ano" required />
+    </mat-form-field>
+
+    <div mat-dialog-actions align="end">
+      <button mat-button type="button" (click)="dialogRef.close()">Cancel</button>
+      <button mat-button color="primary" type="submit">Save</button>
+    </div>
+  </form>
+</div>

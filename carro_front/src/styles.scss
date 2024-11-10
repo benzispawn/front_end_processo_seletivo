@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 2rem;
+}
+
+.lista-veiculos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & .pesquisa-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.form-veiculo {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    & mat-form-field {
+      flex: 1 0 45%;
+    }
+  }
+}
